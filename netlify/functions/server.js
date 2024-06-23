@@ -10,17 +10,12 @@ require('dotenv').config();
 const express = require('express');
 const serverless = require('serverless-http');
 const cors = require('cors');
-const routes = require('./src/routes');
+const routes = require('./routes');
 
 const app = express();
-const router = express.Router();
-
-const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 app.use('/api', routes);
 
-router.use('/.netlify/functions/server', app);
-
-module.exports.handler = serverless(router);
+module.exports.handler = serverless(app);
