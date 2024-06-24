@@ -10,6 +10,7 @@
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
+console.log(process.env.GOOGLE_GENERATIVE_AI_API_KEY)
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY);
 
 const promptTemplate = `Generate a cover letter for a job application using the following job description and resume details. The cover letter should be professional, well-structured, and tailored to the specific requirements of the job. It should highlight relevant experiences, skills, and achievements from the resume that match the job description. Ensure the tone is enthusiastic and the content is compelling to make the applicant stand out. Here is my \n\nResume: {resume}\n\nJob Description: {jobDescription}`;
