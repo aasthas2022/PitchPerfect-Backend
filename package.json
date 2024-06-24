@@ -2,7 +2,7 @@
   "name": "pitchperfect",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "netlify/functions/server.js",
   "scripts": {
     "build": "node netlify/functions/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
