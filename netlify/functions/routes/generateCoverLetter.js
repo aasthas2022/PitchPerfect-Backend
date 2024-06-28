@@ -16,7 +16,7 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY);
 const promptTemplate = `Generate a cover letter for a job application using the following job description and resume details. The cover letter should be professional, well-structured, and tailored to the specific requirements of the job. It should highlight relevant experiences, skills, and achievements from the resume that match the job description. Ensure the tone is enthusiastic and the content is compelling to make the applicant stand out. Here is my \n\nResume: {resume}\n\nJob Description: {jobDescription}{optionalInfo}`;
 
 const generateCoverLetter = async (req, res) => {
-  const { resume, jobDescription, companyMissionVisionCultureVisionCulture, additionalInfo } = req.body;
+  const { resume, jobDescription, companyMissionVisionCultureVisionCultureVisionCulture, additionalInfo } = req.body;
   console.log("Generate cover letter endpoint hit");
   
   if (!resume || !jobDescription) {
@@ -25,8 +25,8 @@ const generateCoverLetter = async (req, res) => {
   }
 
   let optionalInfo = '';
-  if (companyMissionVisionCulture) {
-    optionalInfo += `\n\nIntegrate my experience with company's mission, vision and culture: ${companyMissionVisionCulture}`;
+  if (companyMissionVisionCultureVisionCulture) {
+    optionalInfo += `\n\nIntegrate my experience with company's mission, vision and culture: ${companyMissionVisionCultureVisionCulture}`;
   }
   if (additionalInfo) {
     optionalInfo += `\n\nDont forget to add about: ${additionalInfo}`;
